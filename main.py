@@ -45,7 +45,7 @@ class RobotServer:
     async def connect_to_robot(self, ip):
         self.robot_ip = ip
         print("Verbinde mit Roboter... via " + ip)
-        self.conn = Go2WebRTCConnection(WebRTCConnectionMethod.LocalSTA, ip=self.robot_ip)
+        self.conn = Go2WebRTCConnection(WebRTCConnectionMethod.LocalSTA, ip="192.168.123.161")
         try:
             await self.conn.connect()
             # await self.conn.datachannel.disableTrafficSaving(True)
